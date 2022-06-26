@@ -20,7 +20,7 @@ def prediction():
     user = request.form['userName']
     # convert text to lowercase
     user = user.lower()
-    items = sentiment_model.getSentimentRecommendations(user)
+    items = sentiment_model.get_sentiment_recommendations(user)
 
     if(not(items is None)):
         print(f"retrieving items....{len(items)}")
@@ -36,6 +36,8 @@ def predict_sentiment():
     # get the review text from the html form
     review_text = request.form["reviewText"]
     print(review_text)
+    return render_template("index.html")
+    
     pred_sentiment = sentiment_model.classify_sentiment(review_text)
     print(pred_sentiment)
     return render_template("index.html", sentiment=pred_sentiment)

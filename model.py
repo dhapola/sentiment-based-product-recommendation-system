@@ -46,7 +46,7 @@ class SentimentRecommenderModel:
 
     """function to filter the product recommendations using the sentiment model and get the top 5 recommendations"""
 
-    def getSentimentRecommendations(self, user):
+    def get_sentiment_recommendations(self, user):
         if (user in self.user_final_rating.index):
             # get the product recommedation using the trained ML model
             recommendations = list(
