@@ -1,8 +1,8 @@
-* Python: 3.9.10
-* sklearn: 1.1.1
-* numpy: 1.22.2
-* pandas: 1.4.1
-* nltk: 3.7
-* re (regular expression): 2.2.1
-* sns: 0.11.2
-* xgboost: 1.6.1
+python==3.9.10
+sklearn==1.1.1
+numpy==1.22.2
+pandas==1.4.1
+nltk==3.7
+re==2.2.1
+sns==0.11.2
+xgboost==1.6.1
