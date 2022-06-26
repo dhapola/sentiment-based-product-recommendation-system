@@ -36,7 +36,6 @@ def predict_sentiment():
     # get the review text from the html form
     review_text = request.form["reviewText"]
     print(review_text)
-    return render_template("index.html")
     
     pred_sentiment = sentiment_model.classify_sentiment(review_text)
     print(pred_sentiment)
