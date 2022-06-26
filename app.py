@@ -31,7 +31,7 @@ def prediction():
         return render_template("index.html", message="User Name doesn't exists, No product recommendations at this point of time!")
 
 
-@app.route('/predictSentiment', methods=['POST'])
+@app.route('/predictsentiment', methods=['POST'])
 def predict_sentiment():
     # get the review text from the html form
     review_text = request.form["reviewText"]

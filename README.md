@@ -1,4 +1,6 @@
-# Sentiment Based Product Recommendation - Upgrad
+# Capstone Project - Sentiment Based Product Recommendation System
+
+Submitted By: Deepesh Dhapola
 
 ### Problem Statement
 
@@ -10,32 +12,32 @@ The e-commerce business is quite popular today. Here, you do not need to take or
 
 ### Solution
 
-* github link: https://github.com/kgowni/sentiment-based-product-recommendation
+* github link: https://github.com/ddhapola/sentiment-based-product-recommendation-system
 
-* Heroku (Application is Live): https://sentimentbased-pro-recommender.herokuapp.com/
+* Live App URL running on Heroku: https://sbpr-dd.herokuapp.com/
 
-### Built with
+### Libraries Used
 
-* Python 3.8.8
-* sklearn-crfsuite 0.23.2
-* xgboost 1.6.1
-* numpy 1.20.1
-* nltk 3.6.1
-* pandas 1.2.4
-* Flask 1.1.2
-* Bootstrap CDN 5.1.3
+* Python: 3.9.10
+* sklearn: 1.1.1
+* numpy: 1.22.2
+* pandas: 1.4.1
+* nltk: 3.7
+* re (regular expression): 2.2.1
+* sns: 0.11.2
+* xgboost: 1.6.1
 
 ### Solution Approach
 
-* Dataset and Attribute description are available under dataset\ folder
+* Dataset and Attribute description are available under ./dataset/ folder
 * Data Cleaning, Visualization and Text Preprocessing (NLP) are applied on the dataset. TF-IDF Vectorizer is used to vectorize the textual data(review_title+review_text). It measures the relative importance of the word w.r.to other documents
 * Dataset suffers from Class Imbalance Issue and SMOTE Oversampling technique is used before applying the model
-* Machine Learning Classification Models (Logistic Regression, Naive Baiyes, Tree Algorithms : (Decision Tree, Random Forrest, xgboost) are applied on the vectorized data and the target column (user_sentiment). the objective of this ML model is to classify the sentiment to positive(1) or negative(0). Best Model is selected based on the various ML classification metrics (Accuracy, Precision, Recall, F1 Score, AUC). xgboost is selected to be a better model based on the evaluation metrics.
-*  Colloborative Filtering Recommender system is created based on User-user and item-item approaches.RMSE evaluation metric is used for the evaluation.
-*  SentimentBasedProductRecommendation.ipynb Jupiter notebook contains the code for Sentiment Classification and Recommender Systems
-*  Top 20 products are filtered using the better recommender system, and for each of the products predicted the user_sentiment for all the reviews and filtered out the Top 5 products that have higher Postive User Sentiment (model.py)
-*  Machine Learning models are saved in the pickle files(under the pickle\); Flask API (app.py) is used to interface and test the Machine Learning models. Bootstrap and Flask jinja templates (templates\index.html) are used for setting up the User interface. No additional Custom Styles used.
-*  End to End application is deployed in Heroku 
+* Machine Learning Classification Models (Logistic Regression, Naive Baiyes, Tree Algorithms : (Decision Tree, Random Forest, xgboost) are applied on the vectorized data and the target column (user_sentiment). The objective of this ML model is to classify the sentiment to positive(1) or negative(0). Best Model is selected based on the various ML classification metrics (Accuracy, Precision, Recall, F1 Score, AUC). xgboost is selected to be a better model based on the evaluation metrics.
+*  Collaborative Filtering Recommender system is created based on User-user and item-item approaches. RMSE evaluation metric is used for the evaluation.
+*  SentimentBasedProductRecommendationSystem.ipynb Jupyter notebook contains the code for Sentiment Classification and Recommender Systems
+*  Top 20 products are filtered using the better recommender system, and for each of the products predicted the user_sentiment for all the reviews and filtered out the Top 5 products that have higher Positive User Sentiment (model.py)
+*  Machine Learning models are saved in the pickle files(under the ./pickle/); Flask API (app.py) is used to interface and test the Machine Learning models. Bootstrap and Flask jinja templates (./templates/index.html) are used for setting up the User interface. No additional Custom Styles used.
+*  Application is deployed in Heroku 
 
 
 
