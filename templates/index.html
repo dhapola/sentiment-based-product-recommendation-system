@@ -26,6 +26,7 @@
       <form action="/predict" method="post">
         <div class="row vstack gap-3">
           <div class="row">
+            <label for="userName" class="form-label">This would display Top 5 reviews and recommendations by the provided user.</label>
             <div class="col-sm-5">
               <input
                 class="form-control"
@@ -46,7 +47,7 @@
             {% if row_data %}
             <table class="table table-striped table-hover">
               <caption>
-                List of Top 5 Recommended Products
+                List of Top 5 Recommended Products by the User
               </caption>
               <thead>
                 <tr>
@@ -80,7 +81,7 @@
         <div class="row vstack gap-3">
           <div class="row">
             <label for="reviewText" class="form-label"
-              >Enter your Review here</label
+              >Based on sentiment analysis model, this system would predict whether your review is Positive or Negative. To check, pl enter your review below</label
             >
             <textarea
               class="form-control"
@@ -101,11 +102,12 @@
           <div class="row">
             {% if sentiment == 1%}
             <div class="alert alert-success" role="alert">
-              Entered Review Text is predicted to be Positive
+              Congratulations! Your review is predicted to be a "Positive" review.
+              
             </div>
             {% elif sentiment == 0%}
             <div class="alert alert-danger" role="alert">
-              Entered Review Text is predicted to be Negative
+              Unfortunately, your review is predicted to be a "Negative" review.
             </div>
             {% endif %}
           </div>
