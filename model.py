@@ -121,8 +121,8 @@ class SentimentRecommenderModel:
     """function to derive the base lemma form of the text using the pos tag"""
 
     def lemma_text(self, text):
-        word_pos_tags = nltk.pos_tag(word_tokenize(
-            self.remove_stopword(text)))  # Get position tags
+        word_pos_tags = nltk.pos_tag(word_tokenize(self.remove_stopword(text)))  # Get position tags
+        
         # Map the position tag and lemmatize the word/token
         words = [self.lemmatizer.lemmatize(tag[0], self.get_wordnet_pos(
             tag[1])) for idx, tag in enumerate(word_pos_tags)]
